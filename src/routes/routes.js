@@ -6,7 +6,7 @@ import { addProfileHandler, getProfileHandler, putProfileHandler } from "../hand
 import { getAllBidanHandler } from "../handler/bidan-handler.js";
 import { getArticlesHandler } from "../handler/article-handler.js";
 import { addTestimoniHandler, getTestimoniesByBidanHandler } from "../handler/testimonies-handler.js";
-
+import { addContactsUs } from "../handler/contactUs-handler.js";
 
 const routes = [
     {
@@ -117,6 +117,11 @@ const routes = [
         method: "POST",
         path: '/testimonies',
         handler: addTestimoniHandler
+    },
+    {
+        method: 'POST',
+        path: '/contact-us',
+        handler: addContactsUs
     }
 ]
 
