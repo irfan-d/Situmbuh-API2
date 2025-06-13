@@ -3,7 +3,7 @@ import { addAddress, getAddress, getNearbyDoctorsHandler, putAddress } from "../
 import { registerHandler, loginHandler, logoutHandler } from "../handler/auth-handler.js";
 import { addPredictionHandler, getPredictionHandler, getPredictionDetailHandler, deletePredictionHandler } from "../handler/prediction-handler.js";
 import { addProfileHandler, getProfileHandler, putProfileHandler } from "../handler/profile-handler.js";
-import { getAllBidanHandler } from "../handler/bidan-handler.js";
+import { getAllBidanHandler, getBidanDetailHandler } from "../handler/bidan-handler.js";
 import { getArticlesHandler } from "../handler/article-handler.js";
 import { addTestimoniHandler, getTestimoniesByBidanHandler } from "../handler/testimonies-handler.js";
 import { addContactsUs } from "../handler/contactUs-handler.js";
@@ -99,6 +99,11 @@ const routes = [
         method: "GET",
         path: "/bidan",
         handler: getAllBidanHandler
+    },
+    {
+        method: "GET",
+        path: "/bidan/{id}",
+        handler: getBidanDetailHandler
     },
 
     //============================ artikel
