@@ -4,7 +4,7 @@ export const getAllBidanHandler = async (request, h) => {
     try {
         const { data, error } = await supabase
             .from('bidan')
-            .select('id, nama, pendidikan, tempat_praktik, rating, foto_url, latitude, longitude, harga, jadwal_praktik');
+            .select('id, nama, pendidikan, tempat_praktik, rating, foto_url, latitude, longitude, harga, jadwal_praktik, no_str');
         if (error) return h.response({ error: error.message }).code(400);
         return h.response(data).code(200);
     } catch (error) {
@@ -17,7 +17,7 @@ export const getBidanDetailHandler = async (request, h) => {
         const { id } = request.params;
         const { data, error } = await supabase
             .from('bidan')
-            .select('id, nama, pendidikan, tempat_praktik, rating, foto_url, latitude, longitude, harga, jadwal_praktik')
+            .select('id, nama, pendidikan, tempat_praktik, rating, foto_url, latitude, longitude, harga, jadwal_praktik, no_str')
             .eq('id', id)
             .single();
 
