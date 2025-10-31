@@ -66,7 +66,7 @@ export const addPredictionHandler = async (request, h) => {
             "Breastfeeding": payload.breastfeeding
         }
 
-        const predictionInsert = await axios.post('https://situmbuhprediction.up.railway.app/predict', newPrediction)
+        const predictionInsert = await axios.post('https://web-production-418a.up.railway.app/predict', newPrediction)
         const predictionResult = predictionInsert.data
         
         const { error } = await supabase.from('prediction_history').insert([{
@@ -119,4 +119,5 @@ export const deletePredictionHandler = async (request, h) => {
             message: error.message
         }).code(500)
     }
+
 }
